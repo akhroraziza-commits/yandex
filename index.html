@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Сезон Яндекс — Yandex Market</title>
+<style>
+:root{--bg:#f6f6f4;--card:#fff;--ink:#16161a;--mute:#6b6b73;--price:#e5362b;--btn:#16161a;--btnt:#fff;--chip:#e7e7e2}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101012;--card:#1b1b1f;--ink:#f3f3f1;--mute:#9a9aa2;--price:#ff5a4d;--btn:#ffd400;--btnt:#16161a;--chip:#26262b}}
+:root[data-theme="dark"]{--bg:#101012;--card:#1b1b1f;--ink:#f3f3f1;--mute:#9a9aa2;--price:#ff5a4d;--btn:#ffd400;--btnt:#16161a;--chip:#26262b}
+*{box-sizing:border-box;margin:0}
+html{height:100%;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;padding:max(16px,env(safe-area-inset-top,0px)) 14px max(24px,env(safe-area-inset-bottom,0px));min-height:100%}
+.wrap{max-width:560px;margin:0 auto}
+header{display:flex;align-items:center;gap:10px;padding:6px 2px 10px}
+header b{font-size:20px;letter-spacing:-.2px}
+h1{font-size:26px;line-height:1.15;letter-spacing:-.5px;padding:6px 2px 14px}
+nav{display:flex;gap:8px;overflow-x:auto;padding:0 0 14px;position:sticky;top:0;background:var(--bg);z-index:2}
+nav a{flex:none;background:var(--chip);color:var(--ink);text-decoration:none;font-size:14px;font-weight:600;padding:8px 14px;border-radius:99px}
+h2{font-size:18px;margin:10px 2px 10px;scroll-margin-top:56px}
+.grid{display:grid;gap:12px;grid-template-columns:1fr 1fr;margin-bottom:18px}
+.card{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.ph{aspect-ratio:3/4;background:#e9e9e4;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;font-size:13px;color:#777}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.name{font-size:14px;line-height:1.3;font-weight:600}
+.sub{font-size:12px;color:var(--mute)}
+.price{font-size:20px;font-weight:800;color:var(--price);margin-top:auto}
+.btn{display:block;text-align:center;text-decoration:none;background:var(--btn);color:var(--btnt);font-weight:700;font-size:14px;padding:11px;border-radius:12px}
+.btn:focus-visible,nav a:focus-visible{outline:3px solid var(--price);outline-offset:2px}
+@media (max-width:360px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="17" fill="#fc3f1d"/><path d="M19.3 26h2.6V8h-3.9c-3.8 0-5.8 1.9-5.8 4.8 0 2.3 1.1 3.7 3.1 5.1l-3.5 8.1h2.8l3.2-7.3 1.5 1V26zm0-8.6l-1.2-.8c-1.5-1-2.2-1.8-2.2-3.7 0-1.7 1.2-2.7 3.1-2.7h.3v7.2z" fill="#fff"/></svg>
+<b>Yandex Market</b>
+</header>
+<h1>Сезон винограда официально закрыт, теперь сезон Яндекс</h1>
+<nav id="nav"></nav>
+<main id="m"></main>
+</div>
+<script>
+var C=["Kreatin","Omega-3","Aminokislotalar"];
+var P=[
+[0,"Olimp Creatine 200 g","Sitrus limonad, 50 porsiya","87 466","https://market.yandex.uz/card/olimp-creatine-200-gr-tsitrusovyy-limonad-kreatin-monogidrat/4687599691?do-waremd5=ei3UmTmL5FPKNLz3-6xoHQ&businessId=196594573","https://avatars.mds.yandex.net/get-mpic/20894174/pica333231be7f43b09631cad71e44e597b/orig"],
+[0,"Kevin Levrone Gold Creatine 300 g","60 porsiya","123 743","https://market.yandex.uz/card/gold-creatine-ot-kevina-levrona-60-portsiy-kazhdaya-portsiya-5-gramm-kreatina-monogidrata/4339488359?do-waremd5=zY2tgMei0HmUKZQIl_F9zA&businessId=196594573","https://avatars.mds.yandex.net/get-mpic/13287540/2a0000019e7954068fd1668e1c4759c2770d/orig"],
+[0,"Reckful Creatine 200 g","Ta'msiz, 40 porsiya","105 136","https://market.yandex.uz/card/reckfull-creatine-monohydrate-200g-bez-vkusa-kreatin-monogidrat/5635516481?do-waremd5=V-jQGtBh4TIc0_Bxd9AuFA&businessId=196594573","https://avatars.mds.yandex.net/get-mpic/18117352/2a0000019d9694ad92f0f6d31db4471dfba7/orig"],
+[0,"Myprotein Impact Creatine 250 g","60 porsiya","131 641","https://market.yandex.uz/card/myprotein-impact-creatine-60-serving-250-g--myprotein-kreatine-60-serving/4877933257?do-waremd5=z6BjDMJguPl0qCH1kAVsww&businessId=196594573","https://avatars.mds.yandex.net/get-mpic/18718474/pic59252b0b9f1ee24f81364abeb6cf6ea7/orig"],
+[0,"Applied Nutrition Creatine 250 g","Mikronizatsiyalangan, 50 porsiya","166 470","https://market.yandex.uz/card/applied-nutrition-creatine-monohydrate-micronized-50-serving-250g/4575597606?do-waremd5=Nt6dlSIc_va-uA-WQcLKkg&businessId=196594573","https://avatars.mds.yandex.net/get-mpic/3927667/2a00000199e7e367cebe5d7dcd4a0ad3dd34/orig"],
+[1,"FuelUp Omega-3, 90 softgel","Baliq yog'i 1000 mg","113 971","https://market.yandex.uz/card/fuelup-omega-3-1000mg-90-softgel-omega-3-rybiy-zhir-fish-oil/4736752068?do-waremd5=UL1GdQBqErJb5faXm1MNog&businessId=196594573","https://avatars.mds.yandex.net/get-mpic/18329881/pica52dfe0a703ea6962d7c8c7dd7047c4b/orig"],
+[1,"FuelUp Omega-3, 180 softgel","Baliq yog'i","219 991","https://market.yandex.uz/card/omega-3-omega-3-rybiy-zhir-1000mg-90-softgel-baliq-yogi-fuel-up-steklyanaya-upakovka-180-softgel/4301444002?do-waremd5=wUymKAMyIw3KqK8RCHIWJw&businessId=196594573","https://avatars.mds.yandex.net/get-mpic/16145046/2a0000019a396c29697e66f06b2023556f56/orig"],
+[2,"Olimp Argipower 1500, 120 kapsula","Arginin","264 166","https://market.yandex.uz/card/olimp-argipower-1500mega-caps-120-caps-arginin-v-kapsulakh-dlya-pampa/4718629538?do-waremd5=Uv_Hfzg37WAyV3t3trp-3Q","https://avatars.mds.yandex.net/get-mpic/15060735/2a0000019a0b7c0834196657fc58b704e8b3/orig"]
+];
+var m=document.getElementById("m"),nav=document.getElementById("nav");
+C.forEach(function(n,i){
+var items=P.filter(function(p){return p[0]===i});if(!items.length)return;
+var a=document.createElement("a");a.href="#c"+i;a.textContent=n;nav.appendChild(a);
+var h=document.createElement("h2");h.id="c"+i;h.textContent=n;m.appendChild(h);
+var g=document.createElement("div");g.className="grid";m.appendChild(g);
+items.forEach(function(p){
+var c=document.createElement("article");c.className="card";
+var ph=document.createElement("div");ph.className="ph";
+var im=new Image();im.alt=p[1];im.loading="lazy";im.referrerPolicy="no-referrer";
+im.onerror=function(){ph.textContent=p[1]};im.src=p[5];ph.appendChild(im);
+var b=document.createElement("div");b.className="body";
+b.innerHTML='<div class="name"></div><div class="sub"></div><div class="price"></div><a class="btn" target="_blank" rel="noopener">Yandex’da sotib olish</a>';
+b.querySelector(".name").textContent=p[1];
+b.querySelector(".sub").textContent=p[2];
+b.querySelector(".price").textContent=p[3]+" so'm";
+b.querySelector(".btn").href=p[4];
+c.appendChild(ph);c.appendChild(b);g.appendChild(c);
+});
+});
+</script>
+</body>
+</html>
